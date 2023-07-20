@@ -1,0 +1,7 @@
+.navbar {
+    height: 60px;
+    margin: 10px;
+    box-shadow: 2px 4px darkgray;
+    background-color: blueviolet;
+    border: 3px solid blue;
+}

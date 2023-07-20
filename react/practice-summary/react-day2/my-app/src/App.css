@@ -1,0 +1,11 @@
+.App {
+  text-align: center;
+  border: 10px dashed black;
+}
+
+.parag {
+  text-align: 'center';
+  justify-content: 'left';
+  color: white;
+}
+
