@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // vocabulary:
+
+        // syncronous
+        // asyncronous
+        // single threaded
+        // microtasks
+        // macrotasks
+        // call stack
+        // event loop
+        // callback queue
+        // web api
+
+        // call stack: (where functions are executed)
+
+        // event loop: (checks the call stack and the callback queue)
+
+        console.log('syncronous 1')
+
+        // macrotask: (enters the task que on the next tick(cycle) of the event loop)
+        setTimeout(() => {
+            console.log('timeout 2')
+        }, 0)
+
+        // microtask: (enters task queue immediately after the current function)
+        Promise.resolve().then(() => {
+            console.log('promise 3')
+        })
+
+        console.log('syncronous 4')
+    </script>
+</body>
+</html>

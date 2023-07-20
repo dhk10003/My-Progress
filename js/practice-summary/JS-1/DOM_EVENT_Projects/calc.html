@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="num1">
+        <input type="text" id="num2">
+
+        <select name="operation" id="operation">
+            <option value="multiply">multiply</option>
+            <option value="divide">divide</option>
+            <option value="add">add</option>
+            <option value="subtract">subtract</option>
+            <option value="choice">choose...</option>
+        </select>
+
+        <button >Click to see results</button>
+       
+    </div>
+
+    <p>your result is:</p>
+    <p id="result"></p>
+
+
+    <script>
+        // reference input elements:
+        const num1=document.getElementById('num1')
+        const num2=document.getElementById('num2')
+        const option = document.getElementById('operation')
+        // button reference:
+        const button = document.querySelector('button')
+        // result reference:
+        const result = document.getElementById('result')
+
+        function multiply(num1, num2){
+            return num1 * num2
+        }
+        function sum (num1, num2){
+            return num1 + num2
+        }
+        
+        function division (num1, num2){
+            return num1 / num2;
+        }
+        
+        function subtract(num1,num2){
+            return num1-num2;
+        }
+
+        // onclick for button:
+        button.onclick = ()=>{
+            // get values from inputs
+            const num1Value = Number(num1.value)
+            const num2Value = Number(num2.value)
+            
+            // figure out which function to use
+            if(option.value=="multiply"){
+                result.innerText = multiply(num1Value,num2Value)
+            }else if(option.value=="divide"){
+                result.innerText = division(num1Value,num2Value)
+            }else if(option.value=="add"){
+                result.innerText = sum(num1Value,num2Value)
+            }else if(option.value=="subtract"){
+                result.innerText = subtract(num1Value,num2Value)
+            }else{
+                alert("please choose a valid math operation!")
+            }
+
+        }
+
+    </script>
+</body>
+</html>

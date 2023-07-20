@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script src="jQuery3.7.0.js"></script>
+    
+    <style>
+        .highlight{
+            background-color:yellow;
+        }
+    </style>
+    
+</head>
+<body>
+    <p>This is my paragraph</p>
+    <p>This is another paragraph</p>
+    <p>This is yet another paragraph</p>
+    <p>This is one more paragraph</p>
+    <p>This is the last paragraph!</p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", (e)=>{
+            console.log("DOM fully loaded and parsed");
+        })
+
+        // document.ready is a function that waits for the document to load before running the jQuery code
+        $(document).ready(function(){
+            console.log("jQuery ready!")
+            // element selector/ jQuery uses CSS selectors
+            $("p").click(function(){
+                console.log($(this).text())
+                // $(this).hide();
+                // text() is a jQuery method that returns the text of the element
+                // text, if passed an argument, will change the text of the element
+
+                // html() is a jQuery method that returns the html of the element
+                // html, if passed an argument, will change the html of the element
+
+                // val() is a jQuery method that returns the value of the element
+                // val, if passed an argument, will change the value of the element
+
+                // attr() is a jQuery method that returns the attribute of the element
+                // attr, if passed 2 arguments, will change the attribute of the element
+                $(this).text("I was changed!")
+
+                // css with jquery:
+                // css() is a jQuery method that returns the css of the element
+                // css, if passed 2 arguments, will change the css of the element
+                $(this).css("color", "red")
+
+                // addclass() is a jQuery method that adds a class to the element
+                // removeclass() is a jQuery method that removes a class from the element
+                // toggleclass() is a jQuery method that toggles a class on the element
+                $(this).toggleClass("highlight")
+
+                console.log($(this).css("background-color"))
+
+                // ajax example with jquery:
+                // $.ajax() is a jQuery method that makes an ajax request
+                function ajax(){
+                $.ajax("https://jsonplaceholder.typicode.com/posts/1")
+                    .done(function(data){
+                        console.log(data)
+                    })
+                    .fail(function(){
+                        console.log("ERROR!")
+                    })
+                }
+
+                ajax()
+            });
+        });
+    </script>
+</body>
+</html>

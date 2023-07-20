@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bubbling and Capturing</title>
+    <style>
+      #outer {
+        border: 2px solid red;
+        padding: 30px;
+        height: 100px;
+      }
+      #inner {
+        border: 2px solid blue;
+        padding: 30px;
+        height: 50px;
+      }
+      #footer {
+        border: 2px solid green;
+        padding: 30px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="outer">
+      <div id="inner">
+        <button id="btn">Click Me!</button>
+      </div>
+    </div>
+
+    <div id="footer">
+      <p>Footer Part</p>
+    </div>
+
+    <script src="event_phases.js"></script>
+  </body>
+</html>
