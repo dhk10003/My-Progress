@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <button onclick="func()">Click Me</button>
+        <button id="btn2">BTN 2</button>
+    </div>
+
+    <script>
+        function func(){
+            console.log("button was clicked.")
+        }
+
+        document.querySelector("#btn2").onclick = function(){
+            console.log("button 2 was clicked.")
+        }
+    </script>
+</body>
+</html>
