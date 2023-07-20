@@ -1,0 +1,50 @@
+$primary-color: #272727;
+$secondary-color: #ff652f;
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@mixin transition-ease{
+    transition: all 0.5s ease-in-out;
+}
+
+// function example:
+ // using the function here, we pass it the background color value in the commented out code starting on line 27,
+    // then we are setting the color of the text to the return value of our function
+    // in this case, the function will return a dark text color if the background color is light
+    // and a light text color if the background color is dark.
+@function set-text-color($color){
+    @if(lightness($color) > 40){
+        @return #000;
+    } @else {
+        @return #fff;
+    }
+}
+
+// body{
+//     background-color: $primary-color;
+//     color: set-text-color($primary-color);
+// }
+
+
+// media queries using mixins:
+@mixin media-md {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin media-xl {
+    @media screen and (min-width: 1600px) {
+        @content;
+    }
+}

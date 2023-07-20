@@ -1,0 +1,28 @@
+.nav{
+    .menu-nav{
+        text-align:right;
+
+        // this is the list item that has our anchor element inside it:
+        &__item{
+            display:inline;
+            padding-right: 1rem;
+
+            // selecting the anchor element:
+            &.active > a{
+                color: $secondary-color;
+            }
+        }
+
+        &__link{
+            font-size:1rem;
+            display:inline-block;
+            text-transform:uppercase;
+            font-weight:300;
+            @include transition-ease;
+
+            &:hover{
+                color:blue;
+            }
+        }
+    }
+}
