@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // random javascript to shorten syntax for ourselves:
+        const $ = document.querySelector.bind(document);
+        const ce = document.createElement.bind(document);
+
+        const data = [
+            {
+                imgSrc: 'rainbowcat.jpg',
+                headingVal: 'Rainbow Cat',
+                pVal: 'This is a rainbow cat.'
+            },
+            {
+                imgSrc: 'rainbowcat.jpg',
+                headingVal: 'Rainbow Cat 2',
+                pVal: 'This is a rainbow cat 2.'
+            },
+            {
+                imgSrc: 'probably.jpg',
+                headingVal: 'You can do it, probably',
+                pVal: 'Just kidding, YOU GOT THIS!'
+            }
+        ]
+
+
+        document.body.style.backgroundColor = 'gray';
+
+        function makeCard(imgSrc, headingVal, pVal){
+            // using our custom ce function:
+            const card = ce('div');
+            card.classList.add('card');
+            card.style.width = '50vw';
+            card.style.margin = '0 auto';
+            card.style.padding = '1rem';
+            card.style.borderRadius = '1rem';
+            card.style.backgroundColor = 'white';
+            card.style.border = '1px solid black';
+
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            card.appendChild(img);
+            img.style.width = '100%';
+
+            const heading = document.createElement('h1');
+            heading.innerText = headingVal;
+            card.appendChild(heading);
+
+            const paragraph = document.createElement('p');
+            paragraph.innerText = pVal;
+            paragraph.style.fontFamily = 'sans-serif';
+            paragraph.style.fontSize = '1.5rem';
+            paragraph.style.fontWeight = 'bold';
+            paragraph.style.color = 'gray';
+            card.appendChild(paragraph);
+
+            return card;
+        }
+
+        // loop through data, and render one card for each object in the array:
+        for(let i = 0; i < data.length; i++){
+            const card = makeCard(data[i].imgSrc, data[i].headingVal, data[i].pVal);
+            document.body.appendChild(card);
+        }
+
+        // shortened syntax for document.querySelector:        
+
+        $('body').style.backgroundColor = 'blue';
+
+    </script>
+</body>
+</html>

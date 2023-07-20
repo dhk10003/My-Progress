@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spread operator 2</title>
+</head>
+<body>
+    <h1>Spread operator part 2</h1>
+    
+    <h3 id="output"></h3>
+
+    <script>
+        let arr = [1,2,3]
+
+        // THIS DOES NOT MAKE A NEW ARRAY
+        // IT JUST MAKES A NEW REFERENCE TO THE SAME ARRAY in memory
+        let arr2 = arr
+        arr2.push(4)
+
+        const output = document.getElementById('output')
+        output.innerText = arr
+
+        // spread operator:
+        // THIS MAKES AN ENTIRELY NEW ARRAY AT A NEW MEMORY ADDRESS
+        let arr3 = [...arr]
+        arr3.push(5)
+
+        output.innerText = arr3
+    </script>
+</body>
+</html>

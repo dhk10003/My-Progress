@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- styles: -->
+    <style>
+
+    </style>
+</head>
+<body>
+
+    <div>
+        <input type="text">
+        <button>click here</button>
+    </div>
+
+    <ul>
+
+    </ul>
+
+</body>
+
+<script>
+    const btn = document.querySelector('button')
+
+    function func(){
+        const list = document.querySelector('ul')
+        // get the value from the input
+        const text = document.querySelector('input').value
+               
+        // create a paragraph element
+        const li  = document.createElement('li')
+
+        // line through on click:
+        li.onclick = function(){
+            li.style.textDecoration = 'line-through'
+        }
+
+        // delete li on double click:
+        li.ondblclick = function(){
+            list.removeChild(li)
+        }
+
+        // put the input value inside the paragraph element
+        li.innerText = text
+
+        // append as a list item to a list
+        list.appendChild(li);
+
+        // clear the input
+        document.querySelector('input').value = ''
+    }
+    
+    btn.onclick = func
+</script>
+</body>
+
+</html>

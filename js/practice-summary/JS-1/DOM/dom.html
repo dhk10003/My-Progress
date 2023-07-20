@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+
+    <style>
+        h1:hover{
+            background-color: blue;
+        }
+
+        #main{
+            color: white;
+            background: red;
+        }
+
+        .bgBlue{
+            background-color: blue;
+            color:white;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="main">
+        <h1>Heading</h1>
+        <h3>subheading</h3>
+        <p>this is a paragraph</p>
+    </div>
+
+    <button id="button" class="bgBlue">Remove Main</button>
+
+    <p id="example">
+        This paragraph has white spaces     and has <span>a span element.</span>
+    </p>
+
+    <div id="header">
+        <h3 id="title">Full Stack</h3>
+    </div>
+
+    <script>
+        // id selector:
+        const main = document.getElementById('main');
+        const h1 = document.querySelector('h1');
+        // CSS in JS:
+        // in CSS:
+        // background-color: red;
+        main.style.backgroundColor = 'green';
+        main.style.color = 'white';
+        // or:
+        document.querySelector('h3').style.color = 'white';
+
+        // differences between innerHTML, innerText, and textContent:
+        // innerHTML: returns the HTML content of an element
+        // innerText: returns the text content of an element
+        // textContent: returns the text content of an element
+        console.log(document.querySelector('#example').innerHTML + ": innerHTML")
+        console.log(document.querySelector('#example').innerText + ": innerText")
+        console.log(document.querySelector('#example').textContent + ": textContent")
+
+        // to completely remove an element from the DOM, we use the remove() method:
+        document.querySelector('#header').remove();
+        // The element of ID 'header' has been removed from the DOM
+
+        // create a click event listener:
+        // this is an event listener that listens for a click event on the button with ID 'button'
+        // document.querySelector('#button').addEventListener('click', function(){
+        //     document.querySelector('#main').remove();
+        // });
+
+        // This also adds a click event listener to an element:
+        let button = document.querySelector('#button');
+
+        button.onclick = function(){
+            document.querySelector('#main').remove();
+        }
+
+        // accessing and changing styles:
+        // element.attributes - returns a live collection of all attributes of an element
+        // element.classList - returns a live collection of all classes of an element
+            // classList.add - adds a class to an element
+            // classList.remove - removes a class from an element
+        // element.className - returns the class name of an element
+        // element.setAttribute() - sets an attribute of an element
+        // element.style - returns the inline style of an element
+
+        // log the button attributes to the console:
+        console.log(button.attributes);
+        
+        // log the classlist of the button:
+        console.log(button.classList);
+        button.classList.add('anotherClass');
+
+        // log the classlist of the button:
+        console.log(button.classList);
+        button.classList.remove('anotherClass');
+        console.log(button.classList);
+
+        // log the id attribute of the button element:
+        console.log(button.id)
+
+        // set an attribute:
+        button.setAttribute('name', 'button');
+
+        document.write('WRITING DIRECTLY TO THE BODY');
+
+    </script>
+</body>
+</html>

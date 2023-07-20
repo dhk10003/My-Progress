@@ -1,0 +1,13 @@
+{
+    "name": "test",
+    "version": "1.0.0",
+    "description": "test"
+}
+// json.parse(json)
+// >>
+{
+    name: "name",
+    version: "1.0.0",
+    description: "test"
+}
+// json.stringify(obj)

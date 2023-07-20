@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // syntactical sugar for promises...
+        // async/await is a way to write asynchronous code that looks synchronous
+        // async/await is built on top of promises
+
+        function add(num1, num2){
+            return(num+num2)
+        }
+
+        const add2 = (num1,num2)=>num1+num2
+
+        function hello(){
+            return 'hello'
+        }
+
+        // adding async before our function will make it return a promise
+        async function hello2(){
+            // this return will be wrapped in a promise
+            return 'hello2'
+        }
+        // this is the same thing as:
+        function hello_2(){
+            return Promise.resolve('hello_2')
+        }
+
+        // this function will return a promise that will resolve to the value("hello2") of the promise returned by hello2()
+        // the arguments in the .then() are the resolve and reject functions of the promise returned by hello2()
+        // In this case, the reject function has no way of being called
+        hello2().then(
+            function(message){console.log(message)},
+            function(error){console.log(error)}
+        )
+
+    </script>
+</body>
+</html>
