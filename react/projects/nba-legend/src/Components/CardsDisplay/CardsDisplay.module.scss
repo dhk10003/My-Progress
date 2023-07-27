@@ -1,0 +1,38 @@
+.container {
+    text-align: center;
+
+    #search-bar{
+        width: 500px;
+        padding: 10px;
+    }
+
+    .cards-container {
+        width: 90%;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 10px;
+
+            
+        ul {
+            height: 335px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+        }
+        
+
+        img {
+            height: 350px;
+            &:hover {
+                cursor: pointer;
+                scale: 0.95;
+            }
+        }
+    }
+}
