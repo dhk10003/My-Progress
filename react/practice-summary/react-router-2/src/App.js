@@ -93,7 +93,9 @@ function App() {
       {/* Routes here: */}
       
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/*' element={<Home/>}/>
+        {/* render a route within a route: */}
+        <Route path='/home/*' element={<Home/>}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/products' element={<Products productsList={products}/>}/>
         <Route path='/contact' element={<Contact/>}/>
