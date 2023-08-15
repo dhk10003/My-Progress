@@ -1,0 +1,38 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.App {
+    text-align: center;
+
+    .mainTitle {
+        color: red;
+        margin: 25px auto;
+    }
+
+    .ourDoctors {
+        color: blueviolet;
+    }
+
+    .doctorsListContainer {
+        margin: 30px auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
+    }
+
+    .appointmentList{
+        color: blueviolet;
+        margin-bottom: 30px;
+    }
+
+    .appointmentListContainer {
+        margin: 10px auto 50px;
+
+        .emptyAppointment {
+            width: 80vw;
+        }
+    }
+}

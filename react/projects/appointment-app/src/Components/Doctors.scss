@@ -1,0 +1,9 @@
+.doctorBio {
+    img {
+        width: 250px;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
